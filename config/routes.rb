@@ -1,13 +1,19 @@
 PRESTAMO::Application.routes.draw do
+  #root :to => "usuarios#index"
+
   resources :tweets
 
-  resources :libros
+  resources :libros do
+      member do
+      get "message" 
+    end
+  end
 
   resources :usuarios
+    
 
 
-  match "user" => "tweets#read_message"
-  match "update" => "tweets#update_status"
+  #match "update_friend" => "tweets#update_friend"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

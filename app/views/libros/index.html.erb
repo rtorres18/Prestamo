@@ -1,11 +1,16 @@
-<h1>Listing libros</h1>
+<div data-role="page">
+<p id="notice"><%= notice %></p>
+  <div data-role="header">
+    <h1>Lista de Libros</h1>
+  </div>
+
+<div data-role="content">
 
 <table>
   <tr>
     <th>Titulo</th>
-    <th>Fechaprestamo</th>
-    <th>Cantidaddias</th>
-    <th>Usuario</th>
+    <th>Fecha prestamo</th>
+     <th>Usuario Twiteer</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,15 +20,20 @@
   <tr>
     <td><%= libro.titulo %></td>
     <td><%= libro.fechaprestamo %></td>
-    <td><%= libro.cantidaddias %></td>
     <td><%= libro.usuario.nombre %></td>
-    <td><%= link_to 'Show', libro %></td>
-    <td><%= link_to 'Edit', edit_libro_path(libro) %></td>
-    <td><%= link_to 'Destroy', libro, confirm: 'Are you sure?', method: :delete %></td>
+    <td> <%if (Time.now) >= (libro.fechaprestamo)%>
+  <%= link_to 'Enviar Notificación al usuario', message_libro_path(libro) %>
+  <%end%>
+    </td>
+    <td><%= link_to 'Mostrar', libro %></td>
+    <td><%= link_to 'Modificar', edit_libro_path(libro) %></td>
+    <td><%= link_to 'Eliminar', libro, confirm: ' Estas segurode eliminar este registro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
+</div>
 
 <br />
 
-<%= link_to 'New Libro', new_libro_path %>
+<%= link_to 'Registar un Libro', new_libro_path %>
+</div>

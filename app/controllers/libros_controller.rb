@@ -1,6 +1,12 @@
 class LibrosController < ApplicationController
   # GET /libros
   # GET /libros.json
+  
+  def message
+      @libro = Libro.find(params[:id])
+  end
+  
+  
   def index
     @libros = Libro.all
 
@@ -44,7 +50,7 @@ class LibrosController < ApplicationController
 
     respond_to do |format|
       if @libro.save
-        format.html { redirect_to @libro, notice: 'Libro was successfully created.' }
+        format.html { redirect_to @libro, notice: 'libro was successfully created.' }
         format.json { render json: @libro, status: :created, location: @libro }
       else
         format.html { render action: "new" }
@@ -60,8 +66,8 @@ class LibrosController < ApplicationController
 
     respond_to do |format|
       if @libro.update_attributes(params[:libro])
-        format.html { redirect_to @libro, notice: 'Libro was successfully updated.' }
-        format.json { head :ok }
+        format.html { redirect_to @libro, notice: 'libro was successfully updated.' }
+        format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @libro.errors, status: :unprocessable_entity }
@@ -77,7 +83,7 @@ class LibrosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to libros_url }
-      format.json { head :ok }
+      format.json { head :no_content }
     end
   end
 end

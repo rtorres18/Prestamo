@@ -10,6 +10,7 @@
 <% end %>
 
 <%= form_for(@tweet, :url => "update") do |f| %>
+
   <div class="field">
     <%= f.label :message %><br />
     <%= f.text_field :message %>
@@ -18,5 +19,3 @@
     <%= f.submit "Enviar" %>
   </div>
 <% end %>
-
-<%= link_to 'New Tweet', new_tweet_path %>

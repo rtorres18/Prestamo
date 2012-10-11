@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Nombre:</b>
+  <b>Nombres y Apelledios:</b>
   <%= @usuario.nombre %>
 </p>
 
 <p>
-  <b>Tweet:</b>
+  <b>Cuenta de Twitter:</b>
   <%= @usuario.tweet %>
 </p>
 
 
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+<%= link_to 'Modificar', edit_usuario_path(@usuario) %> |
+<%= link_to 'Regresar', usuarios_path %>

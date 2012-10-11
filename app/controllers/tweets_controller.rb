@@ -1,8 +1,20 @@
 class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
+  def index
+    @tweet = Tweet.new
+    @tweets = Tweet.all
 
-    def read_message
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @tweets }
+    end
+  end
+
+  def send_message
+      @tweet = Tweet.new(params[:tweet])
+  end
+  def read_message
      @tweet = Tweet.new(params[:tweet])
      respond_to do |format|
       format.html # index.html.erb
@@ -18,15 +30,12 @@ class TweetsController < ApplicationController
     end
   end
 
-  def index
-    @tweet = Tweet.new
-    @tweets = Tweet.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tweets }
-    end
+  def update_friend
+    Tweet.direct_message('jromucho2','This is only for you eyes')
+    @tweets = Tweet.find(:all, :from=>"/statuses/friends_timeline/l20amesstCambri.xml")
+    render :xml => @tweets
   end
+
 
 
   # GET /tweets/1

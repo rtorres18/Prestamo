@@ -1,21 +1,17 @@
 class Tweet < ActiveRecord::Base
 
-	Twitter.configure do |config|
-  config.consumer_key = 'cMUkqzkntnJQIEftzXSeOA' 
-  config.consumer_secret = 'Ut2dcs4jzbrIvsKaJ2obMg10Fr49IKtxCp7Y5tvXqiI'
-  config.oauth_token = '872740465-UC711tQJOjVYZy3XcVsh74O2jVnOEf8rKw6VV80P'
-  config.oauth_token_secret = '6buSR9utNRVuo8E0cNFUTeEilLD3qdOz29rtRICio8E'
+Twitter.configure do |config|
+  config.consumer_key = '4fINonepn535cWP64txy6w' 
+  config.consumer_secret = 'Pa1UaG1s3SEa6j7gbtzddDrXaPLXr4DSheXAOBPEo'
+  config.oauth_token = '863670726-n2TK3gxmltB8p5lBqbUOCJDHzwvJBanT0NykEfab'
+  config.oauth_token_secret = 'eS4IcB1q43ZJ3Lwhrvj6p6glKSok6tKzKm9DNiU9ri8'
 end
 
-  def read_message 
-  	return "sin user" if self.user.blank?
-  	Twitter.user_timeline(self.user).first.text
-  end
 
-  def update_status
-  	return "sin update" if self.message.blank?
-  	Twitter.update(self.message)
-  end
 
+  def send_message (usuario)
+        client = Twitter::Client.new
+        client.update('Sr.' + usuario + ' tiene que devolver el libro rapido' )
+  end
 
 end

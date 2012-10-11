@@ -1,9 +1,14 @@
-<h1>Listing usuarios</h1>
+<div data-role="page">
+<p id="notice"><%= notice %></p>
+  <div data-role="header">
+<h1>Lista de usuarios</h1>
+  </div>
 
+<div data-role="content">
 <table>
   <tr>
-    <th>Nombre</th>
-    <th>Tweet</th>
+    <th>Nombres y Apellidos</th>
+    <th>Cuenta de Twitter</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +18,15 @@
   <tr>
     <td><%= usuario.nombre %></td>
     <td><%= usuario.tweet %></td>
-    <td><%= link_to 'Show', usuario %></td>
-    <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-    <td><%= link_to 'Destroy', usuario, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', usuario %></td>
+    <td><%= link_to 'Modificar', edit_usuario_path(usuario) %></td>
+    <td><%= link_to 'Eliminar', usuario, confirm: 'Estas seguro de eliminar este registro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Usuario', new_usuario_path %>
+<%= link_to 'Crear nuevo Usuario', new_usuario_path %>
+    
+</div>
