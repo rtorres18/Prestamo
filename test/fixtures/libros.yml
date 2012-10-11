@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titulo: MyString
+  fechaprestamo: 2012-10-10
+  cantidaddias: 1
+  usuario: 
+
+two:
+  titulo: MyString
+  fechaprestamo: 2012-10-10
+  cantidaddias: 1
+  usuario: 
