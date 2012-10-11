@@ -1,0 +1,6 @@
+Datos de la aplicacion de twitter
+---------------------------------
+Consumer key: 											cMUkqzkntnJQIEftzXSeOA
+Consumer secret: 										Ut2dcs4jzbrIvsKaJ2obMg10Fr49IKtxCp7Y5tvXqiI
+Access token: 											872740465-UC711tQJOjVYZy3XcVsh74O2jVnOEf8rKw6VV80P
+Access token secret: 									6buSR9utNRVuo8E0cNFUTeEilLD3qdOz29rtRICio8E
